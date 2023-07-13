@@ -5,13 +5,13 @@ import java.util.List;
 
 public class AddressBookMain 
 {
-
 	public static void main(String[] args) 
 	{
-	
 		List<Contacts> list = new ArrayList<>();
+		
+		AddressBook.addContact(list);
+		
 		System.out.println("WelCome to AddressBook Programm ");
-
 	}
 
 }
