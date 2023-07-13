@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 
@@ -223,6 +224,18 @@ public class AddressBook {
 			}
 		}
 		return record;
+	}
+	
+	public static void searchTheContact(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the city to search : ");
+		String city = sc.next();
+		List<Contacts> l = list.stream().filter(search -> search.city.equals(city)).collect(Collectors.toList());
+		System.out.println("Contacts from " + city);
+		l.forEach(contacts -> System.out.println(contacts));
+		System.out.println();
+
 	}
 
 }

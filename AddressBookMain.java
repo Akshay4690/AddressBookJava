@@ -22,6 +22,7 @@ public class AddressBookMain
 			System.out.println("3. Edit an existing contact");
 			System.out.println("4. Delete a contact");
 			System.out.println("5. Duplicate Entry");
+			System.out.println("6. Search the contacts");
 			System.out.println("10. Exit \n");
 
 			System.out.print("Enter your choice : ");
@@ -48,6 +49,9 @@ public class AddressBookMain
 				break;
 			case 5:
 				AddressBook.isDuplicateEntry(list, null);
+				
+			case 6:
+				AddressBook.searchTheContact(list);
 			
 			case 10:
 				tree = false;
