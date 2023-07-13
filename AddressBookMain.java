@@ -21,7 +21,7 @@ public class AddressBookMain
 			System.out.println("2. Add a new contact");
 			System.out.println("3. Edit an existing contact");
 			System.out.println("4. Delete a contact");
-		
+			System.out.println("5. Duplicate Entry");
 			System.out.println("10. Exit \n");
 
 			System.out.print("Enter your choice : ");
@@ -30,13 +30,15 @@ public class AddressBookMain
 			System.out.println();
 
 			switch (c) {
+			
 			case 1:
 				AddressBook.addMultipleContacts(list);
-			break;
+				break;
 
 			case 2:
 				AddressBook.addContact(list);
 				break;
+			
 			case 3:
 				AddressBook.editContact(list);
 				break;
@@ -44,6 +46,8 @@ public class AddressBookMain
 			case 4:
 				AddressBook.deleteContact(list);
 				break;
+			case 5:
+				AddressBook.isDuplicateEntry(list, null);
 			
 			case 10:
 				tree = false;

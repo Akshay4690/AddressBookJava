@@ -202,5 +202,27 @@ public class AddressBook {
 			System.out.println();
 		}
 	}
+	
+	// Uc7
+	
+	public static boolean isDuplicateEntry(List<Contacts> list, String firstname)
+	{
+		boolean record = true;
+		if (!list.isEmpty()) 
+		{
+			Iterator<Contacts> iterator = list.iterator();
+		
+			while (iterator.hasNext()) 
+			{
+				Contacts c = iterator.next();
+				if (c.getFirstname().equals(firstname)) {
+					System.out.println("Contact is already exist");
+					record = false;
+					System.out.println();
+				}
+			}
+		}
+		return record;
+	}
 
 }
