@@ -19,6 +19,7 @@ public class AddressBookMain
 	
 			System.out.println("1. Add a new contact");
 			System.out.println("2. Edit an existing contact");
+			System.out.println("3. Delete a contact");
 			System.out.println("10. Exit \n");
 			System.out.print("Enter your choice : ");
 			Scanner sc = new Scanner(System.in);
@@ -32,6 +33,10 @@ public class AddressBookMain
 				break;
 			case 2:
 				AddressBook.editContact(list);
+				break;
+				
+			case 3:
+				AddressBook.deleteContact(list);
 				break;
 				
 			case 10:

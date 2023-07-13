@@ -110,4 +110,40 @@ public class AddressBook {
 			System.out.println();
 		}
 	}
+	
+	// Uc4
+	
+	public static void deleteContact(List<Contacts> list) 
+	{
+		boolean record = false;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter name to delete : ");
+		
+		String deleterecord = sc.next();
+		Iterator<Contacts> iterator = list.iterator();
+		
+		while (iterator.hasNext())
+		{
+			Contacts c = iterator.next();
+			if (c.getFirstname().equals(deleterecord)) 
+			{
+				iterator.remove();
+				record = true;
+			}
+		}
+		
+		if (record)
+		{
+			System.out.println("Contact deleted successfully...");
+			list.forEach(contacts -> System.out.println(contacts));
+		} 
+		
+		else
+		{
+			System.out.println("Contact not found");
+			System.out.println();
+		}
+	}
+
 }
