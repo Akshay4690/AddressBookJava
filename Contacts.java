@@ -5,7 +5,7 @@ public class Contacts
 	private	String firstname;
 	private String lastname;
 	private String address;
-	String city;
+	private String city;
 	private String state;
 	private int zip;
 	private long phoneno ;

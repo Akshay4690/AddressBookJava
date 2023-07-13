@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+
 
 public class AddressBook {
 
@@ -226,6 +228,8 @@ public class AddressBook {
 		return record;
 	}
 	
+	// Uc8
+	
 	public static void searchTheContact(List<Contacts> list)
 	{
 		Scanner sc = new Scanner(System.in);
@@ -235,7 +239,92 @@ public class AddressBook {
 		System.out.println("Contacts from " + city);
 		l.forEach(contacts -> System.out.println(contacts));
 		System.out.println();
+		
+	}
 
+	// Uc9
+	
+	public static void viewCityOrState(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1. City");
+		System.out.println("2. State");
+		System.out.print("Enter choice to search : ");
+		
+		int choice = sc.nextInt();
+		
+		switch (choice)
+		{
+		case 1:
+			getByCity1(list);
+			break;
+			
+		case 2:
+			getByState1(list);
+			break;
+			
+		case 3:
+			getByCity(list);
+			break;
+			
+		case 4:
+			getByState(list);
+			break;
+			
+		default:
+			System.out.println("Enter valid choice");
+			System.out.println();
+						
+		}
+
+	}
+	
+	private static void getByCity1(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the city : ");
+		String searchbycity = sc.next();
+
+		long stream = list.stream().filter(l -> (l.getCity().equals(searchbycity))).count();
+		System.out.println(stream + "\n");
+
+	}
+
+	private static void getByState1(List<Contacts> list) 
+	{
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the state : ");
+		String searchbystate = sc.next();
+
+		long stream = list.stream().filter(l -> (l.getState().equals(searchbystate))).count();
+		System.out.println(stream + "\n");
+
+	}
+			
+	private static void getByCity(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+			
+		System.out.print("Enter the city name : ");
+		String searchbycity = sc.next();
+
+		Map<Object, Object> map = list.stream().filter(l -> (l.city.equals(searchbycity)))
+				.collect(Collectors.toMap(l -> l.getFirstname(), l -> l.city));
+		System.out.println(map + "\n");
+
+	}
+	
+	private static void getByState(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the state name: ");
+		String searchbystate = sc.next();
+		
+		Map<Object, Object> map = list.stream().filter(l -> (l.getState().equals(searchbystate)))
+				.collect(Collectors.toMap(l -> l.getFirstname(), l -> l.getState()));
+		System.out.println(map +"\n");
+		
 	}
 
 }
