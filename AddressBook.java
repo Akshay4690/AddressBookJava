@@ -11,7 +11,6 @@ public class AddressBook {
 	ArrayList <Contacts> contact = new ArrayList<Contacts>();
 	
 	// Uc2 
-	// Uc5
 	
 	public static void addContact(List<Contacts> list)
 	{
@@ -148,7 +147,7 @@ public class AddressBook {
 		}
 	}
 	
-	// Uc5 
+	// Uc5  &  Uc6
 	
 	public static void addMultipleContacts(List<Contacts> list)
 	{
