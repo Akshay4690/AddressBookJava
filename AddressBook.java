@@ -11,6 +11,7 @@ public class AddressBook {
 	ArrayList <Contacts> contact = new ArrayList<Contacts>();
 	
 	// Uc2 
+	// Uc5
 	
 	public static void addContact(List<Contacts> list)
 	{
@@ -49,6 +50,7 @@ public class AddressBook {
 		System.out.println();
 		
 	}
+	
 	
 	// Uc3
 	
@@ -142,6 +144,62 @@ public class AddressBook {
 		else
 		{
 			System.out.println("Contact not found");
+			System.out.println();
+		}
+	}
+	
+	// Uc5 
+	
+	public static void addMultipleContacts(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("How many Contacts to add : ");
+		int count = sc.nextInt();
+		boolean record = true;
+		while (count > 0) 
+		{
+			Scanner s2 = new Scanner(System.in);
+			Scanner s1 = new Scanner(System.in);
+
+			System.out.println("Enter contact details...");
+			System.out.print("Enter the First Name : ");
+			String firstname = s2.next();
+
+			if (record)
+			{
+				System.out.print("Enter the last name : ");
+				String lastname = s2.next();
+
+				System.out.print("Enter the Address : ");
+				String address = s1.nextLine();
+
+				System.out.print("Enter the City Name : ");
+				String city = s2.next();
+				System.out.print("Enter the State Name : ");
+				String state = s2.next();
+		
+				System.out.print("Enter Zip Number : ");
+				int zip = s2.nextInt();
+		
+				System.out.print("Enter Phone Number : ");
+				long phone = s2.nextLong();
+		
+				System.out.print("Enter Email Address : ");
+				String email = s2.next();
+		
+				list.add(new Contacts(firstname, lastname, address, city, state, zip, phone, email));
+				count--;
+			}
+			if (!record)
+			{
+				count = 0;
+			}
+
+		}
+		if (record)
+		{
+			System.out.print("Contacts added Successfully \n");
+			list.forEach(contacts -> System.out.println(contacts));
 			System.out.println();
 		}
 	}
