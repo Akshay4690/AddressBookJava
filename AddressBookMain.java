@@ -25,6 +25,7 @@ public class AddressBookMain
 			System.out.println("6. Search the contacts");
 			System.out.println("7. View the person by city or state");
 			System.out.println("8. Count the contact by city or state");
+			System.out.println("9. Sort the contact by name");
 			System.out.println("10. Exit \n");
 
 			System.out.print("Enter your choice : ");
@@ -63,6 +64,9 @@ public class AddressBookMain
 				
 			case 8:
 				AddressBook.countByCityOrState(list);
+				
+			case 9:
+				AddressBook.sortByName(list);
 				
 			case 10:
 				tree = false;

@@ -1,13 +1,13 @@
 package AssignAb3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
 
 public class AddressBook {
 
@@ -355,5 +355,17 @@ public class AddressBook {
 		System.out.println(map +"\n");
 		
 	}
+	
+	// Uc11
+	
+	public static void sortByName(List<Contacts> list)
+	{
+		Comparator<Contacts> comp = Comparator.comparing(Contacts::getFirstname);
+		List<Contacts> sc = list.stream().sorted(comp).collect(Collectors.toList());
+		sc.forEach(contacts -> System.out.println(contacts));
+		System.out.println();
+	}
+	
+	
 
 }
