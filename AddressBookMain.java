@@ -24,6 +24,7 @@ public class AddressBookMain
 			System.out.println("5. Duplicate Entry");
 			System.out.println("6. Search the contacts");
 			System.out.println("7. View the person by city or state");
+			System.out.println("8. Count the contact by city or state");
 			System.out.println("10. Exit \n");
 
 			System.out.print("Enter your choice : ");
@@ -60,6 +61,9 @@ public class AddressBookMain
 				AddressBook.viewCityOrState(list);
 				break;
 				
+			case 8:
+				AddressBook.countByCityOrState(list);
+				
 			case 10:
 				tree = false;
 				System.out.println("exit successfull...");
@@ -68,6 +72,7 @@ public class AddressBookMain
 			default:
 				System.out.println("Invalid choice please Enter the valid choice \n");
 
+				
 		}
 		
 		}

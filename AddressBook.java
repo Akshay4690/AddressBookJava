@@ -279,6 +279,35 @@ public class AddressBook {
 
 	}
 	
+	// Uc10 
+	
+	public static void countByCityOrState(List<Contacts> list) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1. City ");
+		System.out.println("2. State ");
+		System.out.print("Enter option choice to search : ");
+
+		int choice = sc.nextInt();
+
+		switch (choice) {
+		case 1:
+			getByCity(list);
+			break;
+
+		case 2:
+			getByState(list);
+			break;
+
+		default:
+			System.out.println("Invalid credintial , please enter valid choice");
+			System.out.println();
+
+		}
+
+	}
+
+	
 	private static void getByCity1(List<Contacts> list)
 	{
 		Scanner sc = new Scanner(System.in);
