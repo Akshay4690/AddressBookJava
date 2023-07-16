@@ -1,5 +1,9 @@
 package AssignAb3;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -366,6 +370,75 @@ public class AddressBook {
 		System.out.println();
 	}
 	
+	// Uc12
 	
+	public static void fileIO(List<Contacts> list)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Choose Following Option");
+		System.out.println("1. Write");
+		System.out.println("2. Read");
+		System.out.println("Select your choice");
+		int choice = sc.nextInt();
 
+		switch (choice)
+		{
+		case 1:
+			fileWrite(list);
+			break;
+		case 2:
+			fileRead();
+			break;
+		default:
+			System.out.println("Enter valid choice");
+		}
+
+	}
+
+	
+	private static void fileRead()
+	{
+		try 
+		{
+			FileReader fr = new FileReader("C:\\Users\\Akshay\\eclipse-workspace\\CoreJavaProject\\src\\AssignAb3\\Contacts.java");
+			int i;
+			while ((i = fr.read()) != -1)
+			{
+				System.out.print((char) i);
+			}
+			System.out.println("\n");
+			fr.close();
+
+		} catch (IOException e){
+			System.out.println("error");
+		}
+
+	}
+
+	
+	private static void fileWrite(List<Contacts> list)
+	{
+		try {
+			File path = new File("C:\\Users\\Akshay\\eclipse-workspace\\CoreJavaProject\\src\\AssignAb3\\Contacts.java");
+			FileWriter fr = new FileWriter(path);
+			Iterator<Contacts> l = list.iterator();
+			while (l.hasNext())
+			{
+				Contacts ct = l.next();
+				String st = ct.toString();
+				fr.write(st);
+			}
+			fr.close();
+			System.out.println("File create Successfull .");
+			System.out.println();
+
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("error");
+		}
+
+	}
+	
+	
 }

@@ -26,7 +26,8 @@ public class AddressBookMain
 			System.out.println("7. View the person by city or state");
 			System.out.println("8. Count the contact by city or state");
 			System.out.println("9. Sort the contact by name");
-			System.out.println("10. Exit \n");
+			System.out.println("10.File IO Write and Read");
+			System.out.println("0. Exit \n");
 
 			System.out.print("Enter your choice : ");
 			Scanner sc = new Scanner(System.in);
@@ -64,11 +65,17 @@ public class AddressBookMain
 				
 			case 8:
 				AddressBook.countByCityOrState(list);
+				break;
 				
 			case 9:
 				AddressBook.sortByName(list);
+				break;
 				
 			case 10:
+				AddressBook.fileIO(list);
+				break;
+				
+			case 0:
 				tree = false;
 				System.out.println("exit successfull...");
 				break;
